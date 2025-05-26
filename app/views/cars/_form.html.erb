@@ -1,0 +1,52 @@
+<%= form_with(model: car, class: "contents") do |form| %>
+  <% if car.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
+      <h2><%= pluralize(car.errors.count, "error") %> prohibited this car from being saved:</h2>
+
+      <ul class="list-disc ml-6">
+        <% car.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": car.errors[:name].none?, "border-red-400 focus:outline-red-600": car.errors[:name].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :mileage %>
+    <%= form.number_field :mileage, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": car.errors[:mileage].none?, "border-red-400 focus:outline-red-600": car.errors[:mileage].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :production_date %>
+    <%= form.date_field :production_date, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": car.errors[:production_date].none?, "border-red-400 focus:outline-red-600": car.errors[:production_date].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :power %>
+    <%= form.number_field :power, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": car.errors[:power].none?, "border-red-400 focus:outline-red-600": car.errors[:power].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :fuel_type %>
+    <%= form.text_field :fuel_type, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": car.errors[:fuel_type].none?, "border-red-400 focus:outline-red-600": car.errors[:fuel_type].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :transmission %>
+    <%= form.text_field :transmission, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": car.errors[:transmission].none?, "border-red-400 focus:outline-red-600": car.errors[:transmission].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :cubic_capacity %>
+    <%= form.number_field :cubic_capacity, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": car.errors[:cubic_capacity].none?, "border-red-400 focus:outline-red-600": car.errors[:cubic_capacity].any?}] %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

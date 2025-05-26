@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  mileage: 1
+  production_date: 2025-05-26
+  power: 1
+  fuel_type: MyString
+  transmission: MyString
+  cubic_capacity: 1
+
+two:
+  name: MyString
+  mileage: 1
+  production_date: 2025-05-26
+  power: 1
+  fuel_type: MyString
+  transmission: MyString
+  cubic_capacity: 1
