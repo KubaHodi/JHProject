@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  username: Jakub
+  password: hodi2007
+
+development:
+  <<: *default
+  database: jh_project_development
+
+test:
+  <<: *default
+  database: jh_project_test
+
+production:
+  <<: *default
+  database: jh_project_production
