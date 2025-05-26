@@ -65,6 +65,6 @@ class CarsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def car_params
-      params.expect(car: [ :name, :mileage, :production_date, :power, :fuel_type, :transmission, :cubic_capacity ])
+      params.expect(car: [ :name, :mileage, :production_date, :power, :fuel_type, :transmission, :cubic_capacity, :brand_id ])
     end
 end

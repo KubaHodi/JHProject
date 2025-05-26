@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_26_182912) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_26_184220) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -22,4 +22,20 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_26_182912) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "cars", force: :cascade do |t|
+    t.string "name"
+    t.integer "mileage"
+    t.date "production_date"
+    t.integer "power"
+    t.string "fuel_type"
+    t.string "transmission"
+    t.integer "cubic_capacity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "brand_id", null: false
+    t.index ["brand_id"], name: "index_cars_on_brand_id"
+  end
+
+  add_foreign_key "cars", "brands"
 end
