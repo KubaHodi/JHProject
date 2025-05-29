@@ -1,12 +1,8 @@
-<div id="<%= dom_id car %>">
-  <div class="bg-sky-700 m-7 p-4">
+<div id="<%= dom_id car %>" class="w-full bg-indigo-700">
+  <div class="bg-neutral-600 m-7 p-4">
     <div>
       <strong class="block font-medium mb-1 text-white">Name:</strong>
-      <% if car.name.present? %>
-        <%= car.name %>
-      <% else %>
-        <em>Not existing</em>
-      <% end %>
+      <%= car.name %>
     </div>
     <div>
       <strong class="block font-medium mb-1 text-white">Mileage:</strong>

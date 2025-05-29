@@ -1,4 +1,4 @@
-<div class="mx-auto md:w-2/3 w-full ">
+<div class="mx-auto md:w-2/3 w-full bg-indigo-600 p-10 ">
 <% if notice.present? %>
 <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium
 rounded-lg inline-block" id="notice">
@@ -6,19 +6,19 @@ rounded-lg inline-block" id="notice">
 </p>
 <% end %>
 <%= form_tag do %>
-<h2 class="font-bold text-3xl">Please Log In</h2>
+<h2 class="font-bold text-3xl text-white">Please Log In</h2>
 <div class="my-5">
-<%= label_tag :name, 'Name:' %>
+<%= label_tag :name, 'Name:', class: "text-white" %>
 <%= text_field_tag :name, params[:name], class: "input-field bg-gray-200" %>
 </div>
 <div class="my-5">
-<%= label_tag :password, 'Password:' %>
+<%= label_tag :password, 'Password:', class: "text-white" %>
 <%= password_field_tag :password, params[:password],
 class: "input-field bg-gray-200" %>
 </div>
 <div class="actions">
 <%= submit_tag "Login", class: "rounded-lg py-3 px-5
-bg-green-600 text-black inline-block font-medium cursor-pointer" %>
+text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" %>
 </div>
 <% end %>
 </div>
