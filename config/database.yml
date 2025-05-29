@@ -7,11 +7,12 @@ default: &default
 
 development:
   <<: *default
-  database: jh_project_development
+  adapter: sqlite3
+  database: db/development.sqlite3
 
 test:
   <<: *default
-  database: jh_project_test
+  database: db/test.sqlite3
 
 production:
   <<: *default
